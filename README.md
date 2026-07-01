@@ -18,4 +18,5 @@ gcc -o cursor-scaler cursor_scaler.c -lX11 -lXcursor -lXrender -lXfixes -lXi -lm
 
 ## Usage
 
-Shake mouse fast = big cursor. Stop shaking = normal cursor.
+Shake mouse fast = big cursor. 
+Stop shaking = normal cursor.
