@@ -69,6 +69,7 @@ void cleanup_and_exit(int signum) {
     exit(0);
 }
 
+// TODO(leana8959): use enum instead
 char* get_movement_direction(Point delta) {
     if (fabs(delta.x) <= MOVEMENT_THRESHOLD && fabs(delta.y) <= MOVEMENT_THRESHOLD)
         return NULL;
@@ -91,6 +92,7 @@ void load_system_cursor(CursorScaler *scaler) {
     XFreePixmap(scaler->display, blank);
 }
 
+// TODO(leana8959): it is blurry, why?
 void create_cursor_picture(CursorScaler *scaler) {
     XRenderPictFormat *format = XRenderFindVisualFormat(scaler->display, scaler->visual);
     if (!format) {
@@ -335,6 +337,7 @@ int main() {
     fd_set fds;
     int x11_fd = ConnectionNumber(scaler.display);
     
+    // TODO(leana8959): we can wait on x11 events here and not do polling.
     while (1) {
         bool needs_animation = (scaler.current_scale > MIN_SCALE);
         bool is_active = (needs_animation || 
